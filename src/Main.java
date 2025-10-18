@@ -9,5 +9,6 @@ public class Main {
 
         System.out.println("Not sufficient grades:" + new GradingSystem().notSufficientGrades(new ArrayList<Integer>(List.of(84, 37, 38, 29, 45))));
         System.out.println("Average grade:" + new GradingSystem().averageGrade(new ArrayList<Integer>(List.of(84, 37, 38, 29, 45))));
+        System.out.println("Rounded grades:" + new GradingSystem().roundedGrades(new ArrayList<Integer>(List.of(84, 37, 38, 29, 45))));
     }
 }

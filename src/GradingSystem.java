@@ -7,6 +7,7 @@
 
 3. Schreiben Sie eine Methode, die ein Array von Noten bekommen soll.
  Als Rückgabewert soll die Methode ein Array mit die abgerundeten Noten liefern.
+
 4. Schreiben Sie eine Methode, die ein Array von Noten bekommen soll.
  Als Rückgabewert soll die Methode die maximal abgerundete Note liefern.
  */
@@ -33,5 +34,14 @@ public class GradingSystem {
             sum += grade;
 
         return sum / grades.size();
+    }
+
+    public ArrayList<Integer> roundedGrades(ArrayList<Integer> grades) {
+        ArrayList<Integer> new_grades = new ArrayList<Integer>();
+
+        for (int grade : grades)
+            new_grades.add(ProfessorGradeRounding.roundGrade(grade));
+
+        return new_grades;
     }
 }
