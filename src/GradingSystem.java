@@ -44,4 +44,16 @@ public class GradingSystem {
 
         return new_grades;
     }
+
+    public int maxRoundedGrade(ArrayList<Integer> grades) {
+        int max_grade = Integer.MIN_VALUE;
+
+        for (int grade : grades) {
+            int rounded_grade = ProfessorGradeRounding.roundGrade(grade);
+            if (rounded_grade > max_grade)
+                max_grade = rounded_grade;
+        }
+
+        return max_grade;
+    }
 }
