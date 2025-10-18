@@ -7,9 +7,9 @@ public class Main {
         System.out.println(ProfessorGradeRounding.roundGrade(37)); // Output: 37
         System.out.println(ProfessorGradeRounding.roundGrade(38)); // Output: 40
 
-        System.out.println("Not sufficient grades:" + new GradingSystem().notSufficientGrades(new ArrayList<Integer>(List.of(84, 37, 38, 29, 45))));
-        System.out.println("Average grade:" + new GradingSystem().averageGrade(new ArrayList<Integer>(List.of(84, 37, 38, 29, 45))));
-        System.out.println("Rounded grades:" + new GradingSystem().roundedGrades(new ArrayList<Integer>(List.of(84, 37, 38, 29, 45))));
-        System.out.println("Maximal rounded grade:" + new GradingSystem().maxRoundedGrade(new ArrayList<Integer>(List.of(84, 37, 38, 29, 45, 90, 91))));
+        System.out.println("Not sufficient grades:" + new GradingSystem().notSufficientGrades(new ArrayList<>(List.of(84, 37, 38, 29, 45))));
+        System.out.println("Average grade:" + new GradingSystem().averageGrade(new ArrayList<>(List.of(84, 37, 38, 29, 45))));
+        System.out.println("Rounded grades:" + new GradingSystem().roundedGrades(new ArrayList<>(List.of(84, 37, 38, 29, 45))));
+        System.out.println("Maximal rounded grade:" + new GradingSystem().maxRoundedGrade(new ArrayList<>(List.of(84, 37, 38, 29, 45, 90, 91))));
     }
 }
