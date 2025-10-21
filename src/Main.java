@@ -8,6 +8,6 @@ public class Main {
         System.out.println("Not sufficient grades:" + gradingSystem.notSufficientGrades());
         System.out.println("Average grade:" + String.format("%.2f", gradingSystem.averageGrade()));
         System.out.println("Rounded grades:" + gradingSystem.roundedGrades());
-//        System.out.println("Maximal rounded grade:" + new GradingSystem().maxRoundedGrade();
+        System.out.println("Maximal rounded grade:" + gradingSystem.maxRoundedGrade());
     }
 }
