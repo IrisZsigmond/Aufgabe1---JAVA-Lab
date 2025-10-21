@@ -50,15 +50,17 @@ public class GradingSystem {
 
         return (sum / grades.length);
     }
-//
-//    public ArrayList<Integer> roundedGrades(ArrayList<Integer> grades) {
-//        ArrayList<Integer> new_grades = new ArrayList<Integer>();
-//
-//        for (int grade : grades)
-//            new_grades.add(ProfessorGradeRounding.roundGrade(grade));
-//
-//        return new_grades;
-//    }
+
+    public GradingSystem roundedGrades() {
+        final int MAX_SIZE = grades.length;
+        int[] new_grades = new int[MAX_SIZE];
+
+        int index = 0;
+        for (int grade : grades)
+            new_grades[index++] = ProfessorGradeRounding.roundGrade(grade);
+
+        return new GradingSystem(new_grades);
+    }
 //
 //    public int maxRoundedGrade(ArrayList<Integer> grades) {
 //        int max_grade = Integer.MIN_VALUE;
