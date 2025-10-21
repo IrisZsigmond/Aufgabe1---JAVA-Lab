@@ -12,48 +12,84 @@
  Als Rückgabewert soll die Methode die maximal abgerundete Note liefern.
  */
 
-import java.util.ArrayList;
-
 public class GradingSystem {
-    public ArrayList<Integer> notSufficientGrades(ArrayList<Integer> grades) {
-        ArrayList<Integer> new_grades = new ArrayList<Integer>();
+    private int[] grades;
 
-        for (int grade : grades)
-            if (grade < 38)
-                new_grades.add(grade);
-
-        return new_grades;
+    // C-TOR
+    public GradingSystem(int[] grades) {
+        this.grades = grades;
     }
 
-    public double averageGrade(ArrayList<Integer> grades) {
-        if (grades.isEmpty())
-            return 0.00;
-
-        double sum = 0.00;
-        for (int grade : grades)
-            sum += grade;
-
-        return sum / grades.size();
-    }
-
-    public ArrayList<Integer> roundedGrades(ArrayList<Integer> grades) {
-        ArrayList<Integer> new_grades = new ArrayList<Integer>();
-
-        for (int grade : grades)
-            new_grades.add(ProfessorGradeRounding.roundGrade(grade));
-
-        return new_grades;
-    }
-
-    public int maxRoundedGrade(ArrayList<Integer> grades) {
-        int max_grade = Integer.MIN_VALUE;
-
-        for (int grade : grades) {
-            int rounded_grade = ProfessorGradeRounding.roundGrade(grade);
-            if (rounded_grade > max_grade)
-                max_grade = rounded_grade;
+    public GradingSystem notSufficientGrades() {
+        if (grades == null) {
+            return new GradingSystem(new int[0]);
         }
 
-        return max_grade;
+        int count = 0;
+        for (int grade : grades)
+            if (grade < 38) count++;
+
+        int[] insufficientGrades = new int[count];
+
+        int index = 0;
+        for (int grade : grades)
+            if (grade < 38)
+                insufficientGrades[index++] = grade;
+
+        return new GradingSystem(insufficientGrades);
     }
+
+
+//    public double averageGrade(ArrayList<Integer> grades) {
+//        if (grades.isEmpty())
+//            return 0.00;
+//
+//        double sum = 0.00;
+//        for (int grade : grades)
+//            sum += grade;
+//
+//        return sum / grades.size();
+//    }
+//
+//    public ArrayList<Integer> roundedGrades(ArrayList<Integer> grades) {
+//        ArrayList<Integer> new_grades = new ArrayList<Integer>();
+//
+//        for (int grade : grades)
+//            new_grades.add(ProfessorGradeRounding.roundGrade(grade));
+//
+//        return new_grades;
+//    }
+//
+//    public int maxRoundedGrade(ArrayList<Integer> grades) {
+//        int max_grade = Integer.MIN_VALUE;
+//
+//        for (int grade : grades) {
+//            int rounded_grade = ProfessorGradeRounding.roundGrade(grade);
+//            if (rounded_grade > max_grade)
+//                max_grade = rounded_grade;
+//        }
+//
+//        return max_grade;
+//    }
+
+    @Override
+    public String toString() {
+            if (grades == null)
+                return "null";
+
+            int n = grades.length;
+            if (n == 0)
+                return "[]";
+
+            StringBuilder sb = new StringBuilder(n * 3 + 2); // heuristic, rough estimate of size
+            sb.append('[');
+            for (int i = 0; i < n; i++) {
+                if (i > 0)
+                    sb.append(", ");
+                sb.append(grades[i]);
+            }
+            sb.append(']');
+
+            return sb.toString();
+        }
 }
