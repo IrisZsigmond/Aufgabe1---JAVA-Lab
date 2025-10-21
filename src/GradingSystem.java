@@ -40,16 +40,16 @@ public class GradingSystem {
     }
 
 
-//    public double averageGrade(ArrayList<Integer> grades) {
-//        if (grades.isEmpty())
-//            return 0.00;
-//
-//        double sum = 0.00;
-//        for (int grade : grades)
-//            sum += grade;
-//
-//        return sum / grades.size();
-//    }
+    public double averageGrade() {
+        if (grades.length == 0)
+            return 0.00;
+
+        double sum = 0.00;
+        for (int grade : grades)
+            sum += grade;
+
+        return (sum / grades.length);
+    }
 //
 //    public ArrayList<Integer> roundedGrades(ArrayList<Integer> grades) {
 //        ArrayList<Integer> new_grades = new ArrayList<Integer>();
